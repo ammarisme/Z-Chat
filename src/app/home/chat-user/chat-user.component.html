@@ -1,0 +1,20 @@
+<div class="row" >
+    <div class="panel">
+      <div class="panel-content"> 
+        <div class="row">
+          <ul class="list-group">
+            <li class="list-item" *ngFor="let message of user.messages" style="font-weight:bold;text-decoration:none">{{message.fromUser}} : {{message.message}}</li>
+          </ul>
+        </div>
+        <div class="row">
+            <form action="#">
+              <div class="form-group">
+                <label for="message">Message</label>
+                <input type="text"  class="form-control" currentMessage/>
+              </div>
+              <button class="btn btn-primary pull-right" type="button" (click)="sendMessageClicked()">Send</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

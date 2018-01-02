@@ -1,0 +1,11 @@
+<a href="#" (click)="incomingUserClicked(user)">
+<div class="row " > 
+  <div class="col-xs-12 ">
+      <div [ngClass]="user.chatInitiated?'panel active-incoming-user':'panel'" > 
+        <div class="panel-heading">
+          {{user.userName }}
+        </div>
+      </div>
+  </div>
+</div>
+</a>

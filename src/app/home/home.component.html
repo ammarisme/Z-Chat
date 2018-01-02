@@ -1,0 +1,21 @@
+<div class="row"> 
+  <div class="col-md-2">
+    <app-incoming-user *ngFor="let incomingUser of incomingUsers" (userClicked)="selectedChatUser(incomingUser)" [user]="incomingUser"></app-incoming-user>
+  </div>
+  <div class="col-md-10">
+    <div class="panel">
+      <div class="panel-heading">
+      Chat
+      </div> 
+      <div class="panel-content"> 
+          <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+            <li *ngFor="let chatUser of chatUsers"  ><a href="#{{chatUser.userName}}" data-toggle="tab" >{{chatUser.userName}}</a></li>
+          </ul>
+          
+          <div id="myTabContent" class="tab-content">
+            <app-chat-user *ngFor="let chatUser of chatUsers" [user]="chatUser" class="tab-pane fade in" id="{{chatUser.userName}}" (sendMessageClickEvent)="sendMessage($event)"></app-chat-user>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
